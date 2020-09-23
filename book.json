@@ -1,0 +1,8 @@
+{
+    "title": "车检算法接口文档",
+    "description": "记录车检算法接口变更",
+    "author": "Gao Kaijun",
+    "structure": { "readme": "README.md"},
+    "plugins": ["theme-api"],
+    "language" : "zh-hans"
+}

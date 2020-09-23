@@ -1,0 +1,521 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>车架号模块 · 车检算法接口文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Gao Kaijun">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-api/theme-api.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="灯光模块.html" />
+    
+    
+    <link rel="prev" href="车辆模块.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    封面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../修改记录/">
+            
+                <a href="../修改记录/">
+            
+                    
+                    修改记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    接口文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="车辆模块.html">
+            
+                <a href="车辆模块.html">
+            
+                    
+                    车辆模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.2" data-path="车架号模块.html">
+            
+                <a href="车架号模块.html">
+            
+                    
+                    车架号模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="灯光模块.html">
+            
+                <a href="灯光模块.html">
+            
+                    
+                    灯光模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >车架号模块</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x6A21;&#x5757;&#x63CF;&#x8FF0;&#xFF1A;">&#x6A21;&#x5757;&#x63CF;&#x8FF0;&#xFF1A;</h2>
+<p>&#x8F66;&#x67B6;&#x53F7;&#xFF0C;&#x73BB;&#x7483;&#x4E0B;&#x8F66;&#x67B6;&#x53F7;</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>AlgOpType</th>
+<th>3.0&#x63A5;&#x53E3;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3&#x3001;20003</td>
+<td>0113&#x3001;0120</td>
+<td>chejiaohao_api_process</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<table>
+<thead>
+<tr>
+<th>in<br>out</th>
+<th>3.0&#x63A5;&#x53E3;&#x4FE1;&#x53F7;&#x540D;</th>
+<th>3.0&#x63A5;&#x53E3;&#x7C7B;&#x578B;</th>
+<th>5.0&#x63A5;&#x53E3;&#x4FE1;&#x53F7;&#x540D;</th>
+<th>5.0&#x63A5;&#x53E3;&#x8F93;&#x51FA;&#x503C;&#xFF08;string&#xFF09;</th>
+<th>&#x903B;&#x8F91;</th>
+<th>&#x63CF;&#x8FF0;</th>
+<th>&#x7279;&#x6B8A;&#x57CE;&#x5E02;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>in</td>
+<td>img</td>
+<td>Mat</td>
+<td>main_pic</td>
+<td>/</td>
+<td>&#x8F66;&#x67B6;&#x53F7;&#x6216;&#x62D3;&#x5370;&#x819C;&#x5F53;&#x524D;&#x7167;&#x7247;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>in</td>
+<td>his_img</td>
+<td>Mat</td>
+<td>sub_pic</td>
+<td>/</td>
+<td>&#x8F66;&#x67B6;&#x53F7;&#x6216;&#x62D3;&#x5370;&#x819C;&#x5386;&#x53F2;&#x7167;&#x7247;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>in</td>
+<td>chejiahao_answer</td>
+<td>string</td>
+<td>cheJiaHao</td>
+<td>/</td>
+<td>&#x8F66;&#x67B6;&#x53F7;&#x7B54;&#x6848;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>in</td>
+<td>brand</td>
+<td>string</td>
+<td>/</td>
+<td>/</td>
+<td>&#x8F66;&#x67B6;&#x53F7;&#x5382;&#x5546;&#x54C1;&#x724C;&#x4FE1;&#x606F;</td>
+<td>brand&#x7531;&#x8F6F;&#x4EF6;&#x5C42;&#x4F20;&#x5165;</td>
+<td></td>
+</tr>
+<tr>
+<td>in</td>
+<td>/</td>
+<td>/</td>
+<td>zhiZaoChangMingCheng</td>
+<td>/</td>
+<td>&#x8F66;&#x67B6;&#x53F7;&#x5382;&#x5546;&#x54C1;&#x724C;&#x4FE1;&#x606F;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>in</td>
+<td>/</td>
+<td>/</td>
+<td>cheLiangPinPai</td>
+<td>/</td>
+<td>&#x8F66;&#x67B6;&#x53F7;&#x5382;&#x5546;&#x54C1;&#x724C;&#x4FE1;&#x606F;</td>
+<td>brand = zhiZaoChangMingCheng + &quot;/&quot; +cheLiangPinPai</td>
+<td></td>
+</tr>
+<tr>
+<td>in</td>
+<td>compare_type</td>
+<td>int</td>
+<td>duiBiLeiXing</td>
+<td>0/1/3</td>
+<td>&#x6BD4;&#x8F83;&#x7C7B;&#x578B;&#xFF0C;0:&#x8F66;&#x67B6;&#x53F7;&amp;&#x8F66;&#x67B6;&#x53F7; 1:&#x8F66;&#x67B6;&#x53F7;&amp;&#x62D3;&#x5370;&#x819C; 3:&#x62D3;&#x5370;&#x819C;&amp;&#x62D3;&#x5370;&#x819C;</td>
+<td>&#x9ED8;&#x8BA4;&#x662F;1</td>
+<td></td>
+</tr>
+<tr>
+<td>out</td>
+<td>b_pic_quality</td>
+<td>bool</td>
+<td>zhaoPianQingXiDu</td>
+<td>true/false</td>
+<td>true&#xFF1A;&#x8F66;&#x67B6;&#x53F7;&#x6E05;&#x6670;<br>false&#xFF1A;&#x8F66;&#x67B6;&#x53F7;&#x4E0D;&#x6E05;&#x6670;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>out</td>
+<td>b_chejiahao</td>
+<td>bool</td>
+<td>cheJiaHao</td>
+<td>true/false</td>
+<td>true&#xFF1A;&#x5F53;&#x524D;&#x7167;&#x7247;&#x4E0E;&#x7B54;&#x6848;&#x4E00;&#x81F4;<br>false&#xFF1A;&#x5F53;&#x524D;&#x7167;&#x7247;&#x4E0E;&#x7B54;&#x6848;&#x4E0D;&#x4E00;&#x81F4;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>out</td>
+<td>b_tuomo</td>
+<td>bool</td>
+<td>tuoMo</td>
+<td>true/false</td>
+<td>true&#xFF1A;&#x5386;&#x53F2;&#x7167;&#x7247;&#x4E0E;&#x7B54;&#x6848;&#x4E00;&#x81F4;<br>false&#xFF1A;&#x5386;&#x53F2;&#x7167;&#x7247;&#x4E0E;&#x7B54;&#x6848;&#x4E0D;&#x4E00;&#x81F4;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>out</td>
+<td>b_ori_chejiahao</td>
+<td>bool</td>
+<td>taYinMo</td>
+<td>true/false</td>
+<td>true&#xFF1A;&#x5F53;&#x524D;&#x7167;&#x7247;&#x548C;&#x5386;&#x53F2;&#x7167;&#x7247;&#x5B57;&#x4F53;&#x3001;&#x8D77;&#x6B62;&#x7B26;&#x4E00;&#x81F4;<br>false&#xFF1A;&#x5F53;&#x524D;&#x7167;&#x7247;&#x548C;&#x5386;&#x53F2;&#x7167;&#x7247;&#x5B57;&#x4F53;&#x3001;&#x8D77;&#x6B62;&#x7B26;&#x4E0D;&#x4E00;&#x81F4;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>out</td>
+<td>b_ori_space_vertical</td>
+<td>bool</td>
+<td>chuiZhiWeiZhi</td>
+<td>true/false</td>
+<td>true&#xFF1A;&#x5F53;&#x524D;&#x7167;&#x7247;&#x548C;&#x5386;&#x53F2;&#x7167;&#x7247;&#x5782;&#x76F4;&#x4F4D;&#x7F6E;&#x4E00;&#x81F4;<br>false&#xFF1A;&#x5F53;&#x524D;&#x7167;&#x7247;&#x548C;&#x5386;&#x53F2;&#x7167;&#x7247;&#x5782;&#x76F4;&#x4F4D;&#x7F6E;&#x4E0D;&#x4E00;&#x81F4;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>out</td>
+<td>b_ori_space_level</td>
+<td>bool</td>
+<td>shuiPingWeiZhi</td>
+<td>true/false</td>
+<td>true&#xFF1A;&#x5F53;&#x524D;&#x7167;&#x7247;&#x548C;&#x5386;&#x53F2;&#x7167;&#x7247;&#x6C34;&#x5E73;&#x4F4D;&#x7F6E;&#x4E00;&#x81F4;<br>false&#xFF1A;&#x5F53;&#x524D;&#x7167;&#x7247;&#x548C;&#x5386;&#x53F2;&#x7167;&#x7247;&#x6C34;&#x5E73;&#x4F4D;&#x7F6E;&#x4E0D;&#x4E00;&#x81F4;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>out</td>
+<td>match_brand</td>
+<td>int</td>
+<td>changShangPinPai</td>
+<td>0/1/2</td>
+<td>&#x5382;&#x5546;VIN  0&#xFF1A;&#x4E0D;&#x7B26;&#x5408;  1&#xFF1A;&#x7B26;&#x5408;  2&#xFF1A;&#x4E0D;&#x652F;&#x6301;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>out</td>
+<td>match_score</td>
+<td>int</td>
+<td>piPeiDu</td>
+<td>0~100</td>
+<td>&#x5F53;&#x524D;&#x7167;&#x7247;&#x548C;&#x5386;&#x53F2;&#x7167;&#x7247;&#x7684;&#x5339;&#x914D;&#x5EA6;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>out</td>
+<td>score</td>
+<td>int</td>
+<td>zhiXinDu</td>
+<td>0~100</td>
+<td>&#x5F53;&#x524D;&#x7167;&#x7247;&#x8BC6;&#x522B;&#x7ED3;&#x679C;&#x7684;&#x7F6E;&#x4FE1;&#x5EA6;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>out</td>
+<td>det_ans</td>
+<td>string</td>
+<td>cheJiaHaoShuChu</td>
+<td>string</td>
+<td>&#x8F66;&#x67B6;&#x53F7;&#x65E0;&#x7B54;&#x6848;&#x8F93;&#x51FA;</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"车架号模块","level":"3.1.2","depth":2,"next":{"title":"灯光模块","level":"3.1.3","depth":2,"path":"接口文档/灯光模块.md","ref":"接口文档/灯光模块.md","articles":[]},"previous":{"title":"车辆模块","level":"3.1.1","depth":2,"path":"接口文档/车辆模块.md","ref":"接口文档/车辆模块.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-api":{"languages":[],"split":true,"theme":"light"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Gao Kaijun","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"车检算法接口文档","language":"zh-hans","gitbook":"*","description":"记录车检算法接口变更"},"file":{"path":"接口文档/车架号模块.md","mtime":"2020-09-23T06:37:22.807Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-23T08:45:00.053Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-api/theme-api.js"></script>
+        
+    
+
+    </body>
+</html>
+
